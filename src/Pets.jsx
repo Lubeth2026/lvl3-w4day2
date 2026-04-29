@@ -4,6 +4,8 @@ import {supabase} from './utils/supabase'
 
 export default function Pets() {
     const [pets, setPets] = useState([]);
+//Second Function Call//
+    const [products, setProducts] = useState([]);
 
     useEffect(()=>{
         async function getPets() {
@@ -17,6 +19,20 @@ export default function Pets() {
            } 
         }
         getPets();
+
+//Second Function Call//
+        async function getProducts() {
+           try {
+             const { data, error } = await supabase.from("products").select("*");
+             if (error) {
+               throw new Error(error.message);
+             }
+             setProducts(data);
+           } catch (error) {
+             console.error(error);
+           }
+         }
+         getProducts();
     }, [])
 
   return (
@@ -32,6 +48,7 @@ export default function Pets() {
               <p>Description: {pet.description}</p>
             </div>
         ))}
+        {console.log(products)}
     </div>
   )
 }
