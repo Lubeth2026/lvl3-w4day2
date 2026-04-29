@@ -1,5 +1,6 @@
 
 import Movies from './Movies'
+import Pets from './Pets'
 
 function App() {
   
@@ -8,6 +9,7 @@ function App() {
     <>
      <h1>Hello</h1>
      <Movies/>
+     <Pets/>
     </>
   )
 }

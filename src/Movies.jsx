@@ -20,7 +20,7 @@ export default function Movies() {
 
   return (
     <div>
-        <h2>Movies</h2>
+        <h2>Movies DEMO</h2>
         {movies.map(movie =>(
             <div key={movie.id}>
                 <p>{movie.title}</p>
